@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import "./LayoutDefault.scss";
 import anh2 from "../../assets/anh2.png";
-import Filter from "../../Pages/filter";
+import Filter from "../../Pages/filter/index";
 
 function LayoutDefault() {
     const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -26,7 +26,7 @@ function LayoutDefault() {
                                         <span className="text-upcase">Home</span>
                                     </NavLink>
                                 </li>
-                                <li className="nav-item">
+                                {/* <li className="nav-item">
                                     <NavLink to="/aboutus" className="nav-link">
                                         <span className="text-upcase">aboutus</span>
                                     </NavLink>
@@ -35,7 +35,7 @@ function LayoutDefault() {
                                     <NavLink to="/pinpoint" className="nav-link">
                                     <span className="text-upcase">pinpoint</span>
                                     </NavLink>
-                                </li>
+                                </li> */}
                                 <li className="nav-item">
                                     <NavLink to="/thongke" className="nav-link">
                                     <span className="text-upcase">thongke</span>
@@ -49,7 +49,7 @@ function LayoutDefault() {
                                         <span className="text-upcase">filter</span>
                                     </button>
                                 </li>
-                                <li className="nav-item">
+                                {/* <li className="nav-item">
                                     <NavLink to="/campaign" className="nav-link">
                                     <span className="text-upcase">campaign</span>
                                     </NavLink>
@@ -58,34 +58,37 @@ function LayoutDefault() {
                                     <NavLink to="/hotsearch" className="nav-link">
                                     <span className="text-upcase">hotsearch</span>
                                     </NavLink>
-                                </li>
+                                </li> */}
                             </ul>
                         </div>
                     </div>
                 </nav>
             </header>
 
-         
-            <div className={`filter-sidebar ${isFilterOpen ? 'open' : ''}`}>
-                <div className="filter-sidebar__header">
-                    <h3>Bộ lọc</h3>
-                    <button 
-                        className="filter-sidebar__close" 
-                        onClick={toggleFilter}
-                    >
-                        ✕
-                    </button>
-                </div>
-                <div className="filter-sidebar__content">
-                    <Filter />
-                </div>
-            </div>
-            
+            {/* Filter Sidebar - chỉ render khi isFilterOpen = true */}
             {isFilterOpen && (
-                <div 
-                    className="filter-overlay" 
-                    onClick={toggleFilter}
-                ></div>
+                <>
+                    <div className={`filter-sidebar open`}>
+                        <div className="filter-sidebar__header">
+                            <h3>Bộ lọc</h3>
+                            <button 
+                                className="filter-sidebar__close" 
+                                onClick={toggleFilter}
+                            >
+                                ✕
+                            </button>
+                        </div>
+                        <div className="filter-sidebar__content">
+                            <Filter />
+                        </div>
+                    </div>
+
+                    {/* Overlay */}
+                    <div 
+                        className="filter-overlay" 
+                        onClick={toggleFilter}
+                    ></div>
+                </>
             )}
 
             <main className="layout-default__main">
