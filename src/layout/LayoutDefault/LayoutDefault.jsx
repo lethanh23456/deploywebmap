@@ -95,7 +95,7 @@ function LayoutDefault() {
                 <Outlet />
             </main>
             
-            <footer className="layout-default__footer">
+            {/* <footer className="layout-default__footer">
                 <div className="footer-content">
                     <div className="footer-main">
                         <div className="footer-section">
@@ -142,7 +142,7 @@ function LayoutDefault() {
                         </div>
                     </div>
                 </div>
-            </footer>
+            </footer> */}
         </div>
     );
 }
