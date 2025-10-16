@@ -25,14 +25,14 @@ const Header = ({ items = [], isAdmin = false }: HeaderProps) => {
       <Box className="ml-2 flex items-center gap-2">
         <HeaderLogo isAdmin={isAdmin} />
         <Box>
-          <Input
+          {/* <Input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             icon={<TbSearch />}
             placeholder="Search..."
             variant="filled"
             className={`max-w-[180px] min-w-[140px] ${!isAdmin && isDesktop ? "block" : "hidden"}`}
-          />
+          /> */}
         </Box>
       </Box>
       <HeaderNavigator items={appHeaderMemo || []} />
