@@ -1,0 +1,1 @@
+export { homeRouteAdmin } from "./home.route";

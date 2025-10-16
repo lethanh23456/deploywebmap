@@ -1,0 +1,1 @@
+export { default as homeRoute } from "./home.route";
