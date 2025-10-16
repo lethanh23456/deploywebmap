@@ -2,7 +2,6 @@ import { Box, Menu, Text } from "@mantine/core";
 import Avatar from "./Avatar";
 import { Link } from "@tanstack/react-router";
 import { avatarMenuConfig } from "@/app/configs/global/avatar-menu.config";
-import avatarImage from "@/assets/anh1.png"; 
 
 const AvatarMenu = () => {
   const user = {
@@ -13,9 +12,7 @@ const AvatarMenu = () => {
     <Menu position="bottom-start" width={200}>
       <Menu.Target>
         <Box className="flex items-center gap-2 cursor-pointer">
-          <Avatar 
-            image={avatarImage}
-          />
+          <Avatar />  
           {/* <Box visibleFrom="xl">
             <Text>{user.name ?? "Yukihara"}</Text>
           </Box> */}
